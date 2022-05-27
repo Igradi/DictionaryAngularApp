@@ -1,0 +1,52 @@
+.redAlert{
+    border-color: red;
+}
+.check{
+    padding:10px 10px 10px 10px;
+    color: red;
+    text-align: left;
+}
+.forma{
+    width: 700px;
+}
+@media screen and (min-width: 2000px) {
+    .forma {
+        width: 1000px;
+        
+    }
+}
+@media screen and (max-width: 1500px) {
+    .forma {
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .forma {
+        width: 530px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .forma {
+        width: 480px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .forma {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 755px) {
+    .forma {
+        width: 260px;
+    }
+}
+
+@media screen and (max-width: 285px) {
+    .forma {
+        width: 180px;
+    }
+}

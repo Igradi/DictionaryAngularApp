@@ -1,0 +1,37 @@
+<div class="row ">
+    <div class="col-sm-6">
+        
+        <form style="margin: auto;" class="forma text-center" action="" novalidate #form="ngForm"(submit)="onSubmit(form)" >
+            <p class="text-center h1 fw-bold mb-5 mt-5">Sign Up <i class="bi bi-person-plus"></i></p>
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="SignUpName ">Name:</label>
+                <input class="form-control my-2"name="name"id="SignUpName" type="text"required placeholder="Your first name" #name="ngModel" [(ngModel)]="service.formData.name" required maxlength="30">
+              </div>
+              <div class="col-sm-6">
+                <label for="SignUpSurname">LastName:</label>
+                <input class="form-control my-2"name="lastName"id="SignUpSurname" type="text"required placeholder="Your last name"#lastName="ngModel" [(ngModel)]="service.formData.lastName"required maxlength="50">
+              </div>  
+            </div>
+            
+            <label for="SignUpNickname">NickName:</label>
+            <input class="form-control my-2"name="nickname"id="SignUpNickname" type="text"required placeholder="Your Nickname:"#nickname="ngModel" [(ngModel)]="service.formData.nickname"required maxlength="20">
+            
+            <label for="SignUpEmail">Email:</label>
+            <input class="form-control my-2"name="email"id="SignUpEmail" type="text"required placeholder="Your Email"#email="ngModel" [(ngModel)]="service.formData.email"required maxlength="100">
+            
+            <label for="SignUpPassword">Password:</label>
+            <input class="form-control my-2"[class.redAlert]="confirmedPass.value!==password.value && confirmedPass.dirty" name="password"  id="SignUpPassword" type="password"required placeholder="Your Password"#password="ngModel" [(ngModel)]="service.formData.password"required minlength="8"maxlength="50">
+
+            <label for="SignUpConfirm">Confirm Password:</label>
+            <input class="form-control my-2"[class.redAlert]="confirmedPass.value==confirmedPass.value &&confirmedPass.dirty " name="confirmedPass"id="SignUpConfirm" type="password"required placeholder="Confirm your password"#confirmedPass="ngModel" [(ngModel)]="service.formData.confirmedPass"required minlength="8"maxlength="50" >
+              <div class="check" *ngIf="password.value !== confirmedPass.value && confirmedPass.dirty"><small>Password and Confirm password must be the same!</small></div>
+            <button class="btn btn-lg btn-primary mt-3" type="submit" [disabled]="password.value!==confirmedPass.value || form.invalid ">Sign Up!</button>
+        </form>
+    </div>
+    <div  class="col-sm-6 d-flex " >
+        <img   src="../../assets/images/account.svg"alt="picture"
+        class=" img-fluid  " alt="Sample image">
+
+    </div>
+</div>

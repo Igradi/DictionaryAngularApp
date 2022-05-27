@@ -1,0 +1,20 @@
+@media screen and (max-width: 530px) {
+    .forma {
+        width: 380px;
+    }
+}
+@media screen and (max-width: 430px) {
+    .forma {
+        width: 320px;
+    }
+}
+@media screen and (max-width: 370px) {
+    .forma {
+        width: 250px;
+    }
+}
+@media screen and (max-width: 280px) {
+    .forma {
+        width: 190px;
+    }
+}
