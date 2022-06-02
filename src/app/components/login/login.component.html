@@ -1,24 +1,18 @@
 <div class="text-center">
-
     <form class="forma" #loginForm="ngForm" (ngSubmit)="login(loginForm)" style="max-width: 480px;margin:auto;"
         action="">
-
         <h1 class="mt-4 mb-3"><i class="bi bi-person-circle"></i> Sign in</h1>
-
         <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username or password</div>
-
         <label for="">Email:</label>
-        <input type="text" id="username" name="email" ngModel class="form-control" class="form-control mt-1"
+        <input type="text" id="username" name="username" ngModel class="form-control" class="form-control mt-1"
             placeholder="Your Email address" required autofocus>
         <label class="mt-2" for="">Password:</label>
-        <input type="password" id="password" ngModel class="form-control" placeholder="Your password"
+        <input type="password" id="password" name="password" ngModel class="form-control" placeholder="Your password"
             class="form-control mt-1" required>
-
         <div class="mt-3">
             <button class="btn btn-lg btn-primary w-100" type="submit">Sign In</button>
         </div>
         <p class="mt-2">Not a member yet? <a style="text-decoration: none;" class="link-primary " href="#"> Sign Up </a>
         </p>
     </form>
-
 </div>

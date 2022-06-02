@@ -17,6 +17,7 @@ import { RandomWordService } from "./shared/random-word.service";
 import { WordDefinitionService } from "./shared/word-definition.service";
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { FooterComponent } from './components/footer/footer.component';
     MainComponent,
     HeaderComponent,
     FooterComponent,
+    UserProfileComponent,
 
   ],
   imports: [

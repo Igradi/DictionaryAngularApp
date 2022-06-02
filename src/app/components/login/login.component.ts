@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,9 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   invalidLogin: boolean | undefined;
-
   constructor(private router: Router, private http: HttpClient) { }
-
   login(form: NgForm) {
     const credentials = {
       'username': form.value.username,
@@ -28,8 +25,6 @@ export class LoginComponent implements OnInit {
         this.invalidLogin = true;
       })
   }
-
   ngOnInit(): void {
   }
-
 }
