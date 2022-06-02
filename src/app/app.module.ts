@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 
 
@@ -15,12 +15,16 @@ import { UserService } from './shared/user.service';
 import { MainComponent } from './components/main/main.component';
 import { RandomWordService } from "./shared/random-word.service";
 import { WordDefinitionService } from "./shared/word-definition.service";
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignUpComponent,
     MainComponent,
+    HeaderComponent,
+    FooterComponent,
 
   ],
   imports: [
