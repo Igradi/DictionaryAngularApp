@@ -12,13 +12,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { UserService } from './shared/user.service';
-
+import { MainComponent } from './components/main/main.component';
+import { RandomWordService } from "./shared/random-word.service";
+import { WordDefinitionService } from "./shared/word-definition.service";
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignUpComponent,
-    
+    MainComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -27,9 +30,10 @@ import { UserService } from './shared/user.service';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+
   ],
-  providers: [],
+  providers: [RandomWordService, UserService, WordDefinitionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

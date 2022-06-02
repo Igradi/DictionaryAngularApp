@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RandomWordService } from "./shared/random-word.service";
+import { UserService } from "./shared/user.service";
 
 @Component({
   selector: 'app-root',
