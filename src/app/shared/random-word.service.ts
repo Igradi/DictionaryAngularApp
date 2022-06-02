@@ -14,7 +14,7 @@ export class RandomWordService {
       'x-rapidapi-host': 'wordsapiv1.p.rapidapi.com',
       'x-rapidapi-key': 'e122d46126mshe6792ce4559808cp174d94jsn71ebf07ea543'
     });
-    let params = new HttpParams().set('hasDetails', 'definitions').set('random', 'true').set('hasDetails', 'synonyms').set('hasDetails', 'examples');
+    let params = new HttpParams().set('hasDetails', 'definitions').set('random', 'true');
 
     console.log("u random");
     return this.httpClient.get("https://wordsapiv1.p.rapidapi.com/words/", { headers: headers, params: params });

@@ -27,10 +27,10 @@ export class MainComponent implements OnInit {
         this.word.synonyms = data.results[0].synonyms;
         this.word.wordType = data.results[0].partOfSpeech;
         for (let i = 0; i < data.results.length; i++) {
-          if (data.results[i].definition == undefined) {
+          if (data.results[i].example == undefined) {
             continue;
           } else {
-            this.word.example = data.results[i].definition;
+            this.word.example = data.results[i].example;
             break;
           }
         }
