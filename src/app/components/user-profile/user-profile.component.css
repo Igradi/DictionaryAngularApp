@@ -1,21 +1,3 @@
-html {
-    height: 100%;
-}
-
-
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-color: red !important;
-    background:
-        linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-        linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-        linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-        linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-        linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-        linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-}
-
 .form {
     max-width: calc(100vw - 40px);
     width: 500px;
@@ -104,16 +86,6 @@ button:hover {
     text-align: right;
 }
 
-.ui-menu {
-    max-height: 150px;
-    overflow: auto;
-}
-
-.ui-menu .ui-menu-item {
-    padding: 5px;
-    font-size: 14px;
-}
-
 .relative {
     position: relative;
 }
@@ -158,11 +130,6 @@ button:hover {
     color: #fff;
 }
 
-.input-group .form-control:not(:first-child):not(:last-child),
-.input-group-addon:not(:first-child):not(:last-child),
-.input-group-btn:not(:first-child):not(:last-child) {
-    border-radius: 0 4px 4px 0;
-}
 
 .form-control[disabled],
 .form-control[readonly],
@@ -239,8 +206,6 @@ fieldset[disabled] .form-control {
     box-shadow: inset 96px 0 0 0 #1e439b;
 }
 
-
-/* --- Media Queries --- */
 
 @media only screen and (max-width: 600px) {
     p:before {
