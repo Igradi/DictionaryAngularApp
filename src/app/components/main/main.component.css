@@ -5,3 +5,15 @@ p {
 #wordType {
     font-size: 2rem;
 }
+
+@media screen and (max-width:1200px) {
+    .givenword {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .givenword {
+        font-size: 40px;
+    }
+}
