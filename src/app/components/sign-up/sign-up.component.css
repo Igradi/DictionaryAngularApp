@@ -1,20 +1,32 @@
-.redAlert{
+.redAlert {
     border-color: red;
 }
-.check{
-    padding:10px 10px 10px 10px;
+
+.check {
+    padding: 10px 10px 10px 10px;
     color: red;
     text-align: left;
 }
-.forma{
+
+.forma {
     width: 700px;
 }
+
+img {
+    max-width: 90%;
+}
+
+button {
+    margin-bottom: 20px;
+}
+
 @media screen and (min-width: 2000px) {
     .forma {
         width: 1000px;
-        
+
     }
 }
+
 @media screen and (max-width: 1500px) {
     .forma {
         width: 600px;
@@ -42,6 +54,12 @@
 @media screen and (max-width: 755px) {
     .forma {
         width: 260px;
+    }
+}
+
+@media screen and (max-width: 578px) {
+    img {
+        min-width: 100%;
     }
 }
 
