@@ -16,7 +16,7 @@ export class RandomWordService {
     });
     let params = new HttpParams().set('hasDetails', 'definitions').set('random', 'true');
 
-    console.log("u random");
+
     return this.httpClient.get("https://wordsapiv1.p.rapidapi.com/words/", { headers: headers, params: params });
   }
 }

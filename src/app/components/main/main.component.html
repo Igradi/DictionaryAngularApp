@@ -1,18 +1,25 @@
-<div class="card w-50 text-center mx-auto my-3">
-    <span class="">
-        <h1 class="card-title display-1 ">{{word.wordString}}</h1>
-    </span>
-    <p class="lead card-subtitle" id="wordType">{{word.wordType}}</p>
-    <div class="text-start card-body">
-        <h5 class=" d-inline">Definition: </h5>
-        <p class="inline d-inline"> {{word.definition}}</p>
-        <h5 class="mt-2">Synonyms:</h5>
-        <ul class="list-group list-group-flush text-center">
-            <li *ngFor="let synonym of this.word.synonyms" class="list-group-item">{{synonym}}</li>
-        </ul>
+<form (ngSubmit)="ngOnInit()">
+    <div class="card w-50 text-center mx-auto my-3">
+        <span class="">
+            <h1 class="card-title display-1 ">{{word.wordString}}</h1>
+        </span>
+        <p class="lead card-subtitle" id="wordType">{{word.wordType}}</p>
+        <div class="text-start card-body">
+            <h5 class=" d-inline">Definition: </h5>
+            <p class="inline d-inline"> {{word.definition}}</p>
+            <h5 class="mt-2">Synonyms:</h5>
+            <ul class="list-group list-group-flush text-center">
+                <li *ngFor="let synonym of this.word.synonyms" class="list-group-item">{{synonym}}</li>
+            </ul>
 
-        <h5 class="d-inline">Example:</h5>
-        <p class="d-inline">{{word.example}}</p>
+            <h5 class="d-inline">Example: </h5>
+            <p class="d-inline">{{word.example}}</p>
+            <div>
+                <button class="btn btn-large btn-primary mt-3 mx-auto d-block" type="submit">I want more! <i
+                        class="bi bi-journal-plus"></i></button>
+            </div>
+
+        </div>
+
     </div>
-
-</div>
+</form>
