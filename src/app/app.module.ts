@@ -18,6 +18,7 @@ import { WordDefinitionService } from "./shared/word-definition.service";
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { AlertComponent } from './components/alert/alert.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     HeaderComponent,
     FooterComponent,
     UserProfileComponent,
+    AlertComponent,
 
   ],
   imports: [
