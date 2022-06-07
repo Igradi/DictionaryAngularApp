@@ -5,13 +5,13 @@ body {
 }
 
 
-.allcontent {
+.all-content {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.test {
+.display-item {
     justify-content: center;
 }
