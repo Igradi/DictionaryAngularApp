@@ -2,14 +2,12 @@ p {
     font-size: 1.2rem;
 }
 
-#wordType {
-    font-size: 2rem;
+div i {
+    padding-left: 10px;
 }
 
-@media screen and (max-width:1200px) {
-    .givenword {
-        font-size: 60px;
-    }
+#wordType {
+    font-size: 2rem;
 }
 
 .btn-hover {
@@ -80,8 +78,26 @@ li {
     color: #ffffff;
 }
 
+@media screen and (max-width:1200px) {
+    .givenword {
+        font-size: 60px;
+    }
+}
+
 @media screen and (max-width:768px) {
     .givenword {
         font-size: 40px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .btn-hover {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width:380px) {
+    .btn-hover {
+        width: 100px;
     }
 }
