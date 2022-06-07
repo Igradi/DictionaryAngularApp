@@ -3,3 +3,17 @@ html,
 body {
     background-color: beige !important;
 }
+
+body {
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+}
+
+html {
+    min-height: 100vh;
+}
+
+.footer {
+    margin-top: 250px;
+}

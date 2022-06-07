@@ -12,9 +12,6 @@
     width: 700px;
 }
 
-img {
-    max-width: 90%;
-}
 
 button {
     margin-bottom: 20px;
@@ -57,11 +54,6 @@ button {
     }
 }
 
-@media screen and (max-width: 578px) {
-    img {
-        min-width: 100%;
-    }
-}
 
 @media screen and (max-width: 285px) {
     .forma {
