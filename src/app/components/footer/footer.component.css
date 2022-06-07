@@ -157,6 +157,12 @@
     }
 }
 
+@media screen and (max-width:700px) {
+    .footer {
+        margin-top: 60px;
+    }
+}
+
 @media screen and (max-width:550px) {
 
     .first h4,

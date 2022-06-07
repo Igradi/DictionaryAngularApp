@@ -42,3 +42,9 @@ nav a.active {
 
     font-weight: bold;
 }
+
+@media screen and (max-width:700px) {
+    .navbar {
+        margin-bottom: 60px;
+    }
+}
