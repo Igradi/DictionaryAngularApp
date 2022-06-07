@@ -4,16 +4,14 @@ body {
     background-color: beige !important;
 }
 
-body {
-    display: flex;
-    flex-flow: column;
-    align-items: stretch;
-}
 
-html {
+.allcontent {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.footer {
-    margin-top: 250px;
+.test {
+    justify-content: center;
 }

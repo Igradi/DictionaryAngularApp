@@ -9,6 +9,7 @@
 .footer {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     background-size: cover;
+    width: 100%;
 }
 
 
