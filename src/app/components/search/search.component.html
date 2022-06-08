@@ -1,0 +1,41 @@
+<label for="wordSearch">
+    <h2>Search for a word</h2>
+</label>
+<form class="input-group rounded mt-3" (ngSubmit)="showWord(search.value)">
+
+    <input type="search" id="wordSearch" class="form-control rounded" placeholder="Search" aria-label="Search"
+        aria-describedby="search-addon" name="search" #search />
+
+    <button type="submit" class="input-group-text border-0" id="search-addon">
+        <i class="fas fa-search"></i>
+    </button>
+
+</form>
+
+<form *ngIf=this.wordFound>
+    <div class="card card-4 w-50 text-center mx-auto my-3">
+        <span class="">
+            <h1 class="givenword card-title display-1 card_title">{{this.word.wordString}}</h1>
+        </span>
+
+        <p class="lead card-subtitle" id="wordType">{{this.word.wordType}}</p>
+        <div class="text-start card-body">
+            <h5 class=" d-inline">Definition: </h5>
+            <p class="inline d-inline">{{this.word.definition}} </p>
+            <h5 class="mt-2">Synonyms:</h5>
+            <ul class="list-group list-group-flush text-center">
+                <li *ngFor="let synonym of this.word.synonyms" class="list-group-item">{{synonym}}</li>
+            </ul>
+            <h5 class="d-inline">Example: </h5>
+            <p class="d-inline">{{this.word.example}}</p>
+        </div>
+
+    </div>
+
+</form>
+<div *ngIf="!this.wordFound && this.word.wordString==' This Word hasnt been found'"
+    class="card card-4 w-50 text-center mx-auto my-3">
+    <span class="">
+        <h1 class="givenword card-title display-1 card_title">{{this.word.wordString}}</h1>
+    </span>
+</div>

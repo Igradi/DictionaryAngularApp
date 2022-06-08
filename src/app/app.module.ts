@@ -19,6 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { SearchComponent } from './components/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { AlertComponent } from './components/alert/alert.component';
     FooterComponent,
     UserProfileComponent,
     AlertComponent,
+    SearchComponent,
 
   ],
   imports: [
