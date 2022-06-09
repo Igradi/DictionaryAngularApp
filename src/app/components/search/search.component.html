@@ -1,12 +1,12 @@
 <label for="wordSearch">
     <h2>Search for a word</h2>
 </label>
-<form class="input-group rounded mt-3" (ngSubmit)="showWord(search.value)">
+<form class="input-group rounded mt-3" #form="ngForm" (ngSubmit)="showWord(search.value)">
 
-    <input type="search" id="wordSearch" class="form-control rounded" placeholder="Search" aria-label="Search"
-        aria-describedby="search-addon" name="search" #search />
+    <input type="search" id="wordSearch" class="form-control rounded" [(ngModel)]="search.value" placeholder="Search"
+        aria-label="Search" aria-describedby="search-addon" name="search" #search />
 
-    <button type="submit" class="input-group-text border-0" id="search-addon">
+    <button type="submit" [disabled]="search.value===''" class="input-group-text border-0" id="search-addon">
         <i class="fas fa-search"></i>
     </button>
 
