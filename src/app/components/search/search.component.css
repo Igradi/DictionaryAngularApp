@@ -10,8 +10,9 @@ h2 {
 div {
     margin: auto;
     width: 50%;
-
 }
+
+p {}
 
 button {
 
@@ -66,5 +67,12 @@ li {
 @media screen and (max-width:768px) {
     .givenword {
         font-size: 40px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    div {
+        text-align: center;
+        min-width: 200px;
     }
 }

@@ -92,12 +92,33 @@ li {
 
 @media screen and (max-width:500px) {
     .btn-hover {
-        width: 150px;
+        width: 160px;
     }
 }
 
 @media screen and (max-width:380px) {
     .btn-hover {
-        width: 100px;
+        width: 140px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    div {
+        text-align: center;
+        min-width: 200px;
+    }
+
+}
+
+@media screen and (max-width:550px) {
+    .btn-hover {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+}
+
+@media screen and (max-width:400px) {
+    span {
+        font-size: 14px;
     }
 }
