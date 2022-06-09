@@ -6,13 +6,15 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { AuthGuardService } from './guards/auth-guard.service';
+import { SearchComponent } from './components/search/search.component';
 const routes: Routes = [
 
   { path: 'home', component: MainComponent, canActivate: [AuthGuardService] },
   { path: 'login', component: LoginComponent },
   { path: 'about', component: UserProfileComponent, canActivate: [AuthGuardService] },
   { path: 'register', component: SignUpComponent },
-  { path: 'alert', component: AlertComponent }
+  { path: 'alert', component: AlertComponent },
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({
