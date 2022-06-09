@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logOut() {
-    localStorage.getItem("jwt");
+    localStorage.removeItem("jwt");
   }
 
   ngOnInit(): void {

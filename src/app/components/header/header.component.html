@@ -23,7 +23,11 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/about" routerLinkActive="active" href="#">About</a>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/login" routerLinkActive="active" href="#">Login/register</a>
+                    <a class="nav-link" *ngIf="isUserAuthenticated()==false" routerLink="/login"
+                        routerLinkActive="active" href="#">Login/register</a>
+                <li class="nav-item">
+                    <a class="nav-link" *ngIf="isUserAuthenticated()==true" routerLink="/login"
+                        routerLinkActive="active" href="#">Logout</a>
             </ul>
         </div>
     </div>
