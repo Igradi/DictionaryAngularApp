@@ -17,7 +17,6 @@ export class SearchComponent implements OnInit {
   showWord(word: string): void {
     console.log(word);
     this.wordFound = false
-    console.log("usa u showWord");
     this.service.searchWord(word).subscribe(
       data => {
         this.word.wordString = data.word;
