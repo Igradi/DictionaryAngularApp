@@ -1,4 +1,4 @@
-<form class="form">
+<form class="form" #form="ngForm" (submit)="onSubmitEdit(form)">
     <h2>User Profile</h2>
     <div class="form-group">
         <label for="email">Nickname:</label>
@@ -41,8 +41,3 @@
                     class="fa fa-fw fa-paper-plane"></i></button></a>
     </div>
 </form>
-
-<div class="thanks" style="display: none;">
-    <h4>Thank you!</h4>
-    <p><small>Your message has been successfully sent.</small></p>
-</div>

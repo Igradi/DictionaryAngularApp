@@ -6,10 +6,15 @@ import { HttpClient } from "@angular/common/http";
 })
 export class UserService {
 
-  constructor(private http:HttpClient) { }
-  formData:User = new User();
+  constructor(private http: HttpClient) { }
+  formData: User = new User();
   readonly baseUrl = 'https://localhost:7153/api/User/POST'
-  postUser(){
-   return this.http.post(this.baseUrl,this.formData);
+  readonly editUrl = 'https://localhost:7153/api/User/PUT'
+  postUser() {
+    return this.http.post(this.baseUrl, this.formData);
+  }
+  postUserProfile() {
+    return this.http.put(this.editUrl, localStorage.getItem("user"));
   }
 }
+
