@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
         let decodedJWT = JSON.parse(window.atob(tokenCopy!.split('.')[1]));
 
         this.user.email = decodedJWT.email;
+        localStorage.setItem("user", this.user.email);
 
-        this.service.userInfo(this.user)
 
       }, err => {
         this.invalidLogin = true;

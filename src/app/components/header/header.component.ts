@@ -26,12 +26,15 @@ export class HeaderComponent implements OnInit {
   }
   getUser() {
     if (this.isUserAuthenticated()) {
-      this.user = this.service.returnUser();
-      console.log(this.user.email);
+      this.user.email = localStorage.getItem("user")!;
+
+
+
       return true;
     } else
       return false;
   }
+
   ngOnInit(): void {
 
   }
