@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { AuthGuardService } from 'src/app/guards/auth-guard.service';
+import { User } from 'src/app/shared/user.model';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +10,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private jwtHelper: JwtHelperService) { }
-
+  constructor(private jwtHelper: JwtHelperService, private service: AuthGuardService) { }
+  public user = new User();
   isUserAuthenticated() {
     const token = localStorage.getItem("jwt");
     if (token && !this.jwtHelper.isTokenExpired(token)) {
@@ -22,8 +24,16 @@ export class HeaderComponent implements OnInit {
   logOut() {
     localStorage.removeItem("jwt");
   }
-
+  getUser() {
+    if (this.isUserAuthenticated()) {
+      this.user = this.service.returnUser();
+      console.log(this.user.email);
+      return true;
+    } else
+      return false;
+  }
   ngOnInit(): void {
+
   }
 
 }

@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthGuardService } from 'src/app/guards/auth-guard.service';
+import { User } from 'src/app/shared/user.model';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +11,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   invalidLogin: boolean | undefined;
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient, private service: AuthGuardService) { }
+  private user = new User();
   login(form: NgForm) {
     const credentials = {
       'username': form.value.username,
@@ -21,6 +24,13 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("jwt", token);
         this.invalidLogin = false;
         this.router.navigate(["/home"]);
+        let tokenCopy = localStorage.getItem('jwt');
+        let decodedJWT = JSON.parse(window.atob(tokenCopy!.split('.')[1]));
+
+        this.user.email = decodedJWT.email;
+
+        this.service.userInfo(this.user)
+
       }, err => {
         this.invalidLogin = true;
       })
