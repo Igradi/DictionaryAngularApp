@@ -5,7 +5,6 @@ export class User {
     nickname: string = '';
     email: string = '';
     bussinessMail: string = '';
-    dateOfBirth: string = '';
     description: string = '';
     password: string = '';
     confirmedPass: string = '';

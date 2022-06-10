@@ -13,7 +13,7 @@ export class UserService {
   postUser() {
     return this.http.post(this.baseUrl, this.formData);
   }
-  postUserProfile() {
+  putUserProfile() {
     return this.http.put(this.editUrl, localStorage.getItem("user"));
   }
 }

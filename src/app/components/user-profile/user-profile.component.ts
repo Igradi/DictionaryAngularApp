@@ -15,15 +15,15 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmitEdit(form: NgForm) {
-    this.service.postUserProfile().subscribe(
+    this.service.putUserProfile().subscribe(
       res => {
         this.resetForm(form);
         this.toastr.success('Congratulations, you have edited your profile!', 'Success');
       },
       err => {
-
-        this.toastr.warning('Something went wrong', 'ERROR');
         this.resetForm(form);
+        this.toastr.warning('Something went wrong', 'ERROR');
+
       }
     )
   };
