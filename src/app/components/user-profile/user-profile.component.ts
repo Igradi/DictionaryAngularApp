@@ -15,7 +15,7 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmitEdit(form: NgForm) {
-    this.service.postUser().subscribe(
+    this.service.postUserProfile().subscribe(
       res => {
         this.resetForm(form);
         this.toastr.success('Congratulations, you have edited your profile!', 'Success');
