@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Toast, ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/shared/user.service';
+import { EditUser } from 'src/app/shared/edit-user.model';
 
 @Component({
   selector: 'app-user-profile',
@@ -22,6 +23,7 @@ export class UserProfileComponent implements OnInit {
       },
       err => {
         this.resetForm(form);
+        console.log("reset");
         this.toastr.warning('Something went wrong', 'ERROR');
 
       }
@@ -29,5 +31,6 @@ export class UserProfileComponent implements OnInit {
   };
   resetForm(form: NgForm) {
     form.form.reset();
+    this.service.editFormData = new EditUser();
   }
 }
