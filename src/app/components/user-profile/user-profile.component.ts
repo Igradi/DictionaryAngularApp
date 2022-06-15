@@ -22,8 +22,6 @@ export class UserProfileComponent implements OnInit {
         this.toastr.success('Congratulations, you have edited your profile!', 'Success');
       },
       err => {
-        this.resetForm(form);
-        console.log("reset");
         this.toastr.warning('Something went wrong', 'ERROR');
 
       }
