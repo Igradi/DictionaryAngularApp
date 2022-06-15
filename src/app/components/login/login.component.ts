@@ -27,8 +27,8 @@ export class LoginComponent implements OnInit {
         let tokenCopy = localStorage.getItem('jwt');
         let decodedJWT = JSON.parse(window.atob(tokenCopy!.split('.')[1]));
 
-        this.user.email = decodedJWT.email;
-        localStorage.setItem("user", this.user.email);
+
+        localStorage.setItem("user", decodedJWT.id);
 
 
       }, err => {
