@@ -22,8 +22,8 @@
     <div class="form-group">
         <label for="email">Contact Number:</label>
         <div class="relative">
-            <input class="form-control" #phoneNumber="ngModel" [(ngModel)]="service.editFormData.phoneNumber"
-                name="phoneNumber" type="text" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+            <input class="form-control" #contactNumber="ngModel" [(ngModel)]="service.editFormData.contactNumber"
+                name="contactNumber" type="text" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'');"
                 required="" placeholder="Type your Mobile Number...">
             <i class="fa fa-phone"></i>
         </div>

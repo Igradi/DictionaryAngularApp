@@ -1,6 +1,6 @@
 export class EditUser {
     nickname: string = '';
     bussinessMail: string = '';
-    phoneNumber: string = '';
+    contactNumber: string = '';
     description: string = '';
 }
