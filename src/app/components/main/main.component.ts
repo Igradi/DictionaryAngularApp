@@ -1,11 +1,12 @@
 
-import { Component, OnInit } from '@angular/core';
+import { COMPILER_OPTIONS, Component, OnInit } from '@angular/core';
 import { RandomWordService } from "../../shared/random-word.service";
 import { Word } from "../../shared/word.model";
 import { WordDefinitionService } from "../../shared/word-definition.service";
 import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 import { ConnectableObservable } from 'rxjs';
 import { ThisReceiver } from '@angular/compiler';
+import { AddWordToDbService } from 'src/app/shared/add-word-to-db.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class MainComponent implements OnInit {
 
 
 
-  constructor(private _randomWord: RandomWordService, private _wordDefinition: WordDefinitionService) {
+  constructor(private _randomWord: RandomWordService, private _wordDefinition: WordDefinitionService, private _addWord: AddWordToDbService) {
 
   }
   public word: Word = new Word();
@@ -28,6 +29,8 @@ export class MainComponent implements OnInit {
         this.word.wordString = data.word;
         this.word.definition = data.results[0].definition;
         this.word.wordType = data.results[0].partOfSpeech;
+
+
         try {
           this.word.example = data.results[0].examples[0];
         }
@@ -44,8 +47,15 @@ export class MainComponent implements OnInit {
         if (this.word.synonyms == undefined) {
           this.word.synonyms = [" This word has no synonyms"];
         }
+      }, err => {
+        console.log(err)
+      }, () => {
+        console.log(this.word.wordString);
+        this._addWord.addWord(this.word.wordString, this.word.wordType);
       }
+
     )
 
   }
+
 }

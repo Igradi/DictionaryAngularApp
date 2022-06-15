@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { SearchComponent } from './components/search/search.component';
+import { AddWordToDbService } from './shared/add-word-to-db.service';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -57,7 +58,7 @@ export function tokenGetter() {
 
 
   ],
-  providers: [RandomWordService, UserService, WordDefinitionService],
+  providers: [RandomWordService, UserService, WordDefinitionService, AddWordToDbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
