@@ -7,6 +7,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { SearchComponent } from './components/search/search.component';
+import { StatsComponent } from './components/stats/stats.component';
 const routes: Routes = [
 
   { path: 'home', component: MainComponent, canActivate: [AuthGuardService] },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'about', component: UserProfileComponent, canActivate: [AuthGuardService] },
   { path: 'register', component: SignUpComponent },
   { path: 'alert', component: AlertComponent },
-  { path: 'search', component: SearchComponent, canActivate: [AuthGuardService] }
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuardService] },
+  { path: 'stats', component: StatsComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({
