@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthGuardService } from 'src/app/guards/auth-guard.service';
 import { User } from 'src/app/shared/user.model';
+import { UserService } from 'src/app/shared/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +12,7 @@ import { User } from 'src/app/shared/user.model';
 })
 export class LoginComponent implements OnInit {
   invalidLogin: boolean | undefined;
-  constructor(private router: Router, private http: HttpClient, private service: AuthGuardService) { }
+  constructor(private router: Router, private http: HttpClient, private service: AuthGuardService, private userService: UserService) { }
   private user = new User();
   login(form: NgForm) {
     const credentials = {
@@ -29,8 +30,7 @@ export class LoginComponent implements OnInit {
 
 
         localStorage.setItem("user", decodedJWT.id);
-
-
+        this.userService.getUserNick(Number(localStorage.getItem("user")));
       }, err => {
         this.invalidLogin = true;
       })

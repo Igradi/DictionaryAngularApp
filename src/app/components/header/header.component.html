@@ -22,7 +22,7 @@
                     <a class="nav-link" routerLink="/search" routerLinkActive="active" href="#">Search words</a>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/about" routerLinkActive="active" *ngIf="getUser()" href="#">
-                        About {{this.user.email}}</a>
+                        About {{this.user.nickname}}</a>
                     <a class="nav-link" routerLink="/about" routerLinkActive="active" *ngIf="!getUser()" href="#">
                         About </a>
 
