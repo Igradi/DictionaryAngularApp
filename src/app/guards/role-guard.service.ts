@@ -17,9 +17,10 @@ export class RoleGuardService {
   canActivate(route: ActivatedRouteSnapshot): boolean {
     const token = localStorage.getItem('jwt') || "";
     const tokenPayload = decode(token);
-    if (!this.compa.isUserAuthenticated() || (<any>tokenPayload).role !== 'admin') {
+    if (this.compa.isUserAuthenticated() && (<any>tokenPayload).role == 'admin') {
       return true;
     }
+    this.router.navigate(["/alert"]);
     return false;
   }
 

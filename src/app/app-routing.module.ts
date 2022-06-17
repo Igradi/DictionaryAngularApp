@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'alert', component: AlertComponent },
   { path: 'search', component: SearchComponent, canActivate: [AuthGuardService] },
   { path: 'stats', component: StatsComponent, canActivate: [AuthGuardService] },
-  { path: 'admin', component: AdminPageComponent, canActivate: [AuthGuardService] }
+  { path: 'admin', component: AdminPageComponent, canActivate: [RoleGuardService] }
 ];
 
 @NgModule({

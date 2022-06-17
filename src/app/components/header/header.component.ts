@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
   isAdmin() {
     const token = localStorage.getItem('jwt') || "";
     const tokenPayload = decode(token);
-    if ((<any>tokenPayload).role !== 'admin') {
+    if ((<any>tokenPayload).role === 'admin') {
       return true;
     } else {
       return false;
