@@ -50,7 +50,7 @@ export class MainComponent implements OnInit {
       }, err => {
         console.log(err)
       }, () => {
-        console.log(this.word.wordString);
+
         this._addWord.addWord(this.word.wordString, this.word.wordType);
       }
 

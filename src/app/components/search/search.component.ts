@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AddWordToDbService } from 'src/app/shared/add-word-to-db.service';
 import { WordDefinitionService } from 'src/app/shared/word-definition.service';
 import { Word } from 'src/app/shared/word.model';
 @Component({
@@ -8,7 +9,7 @@ import { Word } from 'src/app/shared/word.model';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(public service: WordDefinitionService) { }
+  constructor(public service: WordDefinitionService, private wordService: AddWordToDbService) { }
   public word: Word = new Word();
   ngOnInit(): void {
 
@@ -38,12 +39,15 @@ export class SearchComponent implements OnInit {
         if (this.word.synonyms == undefined) {
           this.word.synonyms = [" This word has no synonyms"];
         }
+        this.wordService.addWord(this.word.wordString, this.word.wordType);
         this.wordFound = true;
+
       },
       error => {
         this.word.wordString = " This Word hasnt been found";
         this.wordFound = false
-      }
+      },
+
     )
   }
 }
