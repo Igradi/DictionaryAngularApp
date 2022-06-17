@@ -31,6 +31,10 @@
                     <a class="nav-link" *ngIf="isUserAuthenticated()==false" routerLink="/login"
                         routerLinkActive="active" href="#">Login/register</a>
                 <li class="nav-item">
+                    <a class="nav-link" *ngIf="isUserAuthenticated() && !isAdmin()" routerLink="/admin"
+                        routerLinkActive="active" href="#">Admin
+                        options</a>
+                <li class="nav-item">
                     <a class="nav-link" *ngIf="isUserAuthenticated()==true" (click)="logOut()" routerLink="/login"
                         routerLinkActive="active" href="#">Logout</a>
             </ul>

@@ -23,6 +23,7 @@ import { AlertComponent } from './components/alert/alert.component';
 import { SearchComponent } from './components/search/search.component';
 import { AddWordToDbService } from './shared/add-word-to-db.service';
 import { StatsComponent } from './components/stats/stats.component';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -40,6 +41,7 @@ export function tokenGetter() {
     AlertComponent,
     SearchComponent,
     StatsComponent,
+    AdminPageComponent,
 
   ],
   imports: [

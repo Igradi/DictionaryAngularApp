@@ -3,6 +3,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthGuardService } from 'src/app/guards/auth-guard.service';
 import { User } from 'src/app/shared/user.model';
 import { UserService } from 'src/app/shared/user.service';
+import decode from 'jwt-decode';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +17,15 @@ export class HeaderComponent implements OnInit {
   isUserAuthenticated() {
     const token = localStorage.getItem("jwt");
     if (token && !this.jwtHelper.isTokenExpired(token)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  isAdmin() {
+    const token = localStorage.getItem('jwt') || "";
+    const tokenPayload = decode(token);
+    if ((<any>tokenPayload).role !== 'admin') {
       return true;
     } else {
       return false;
