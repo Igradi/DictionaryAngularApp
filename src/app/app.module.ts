@@ -24,7 +24,7 @@ import { SearchComponent } from './components/search/search.component';
 import { AddWordToDbService } from './shared/add-word-to-db.service';
 import { StatsComponent } from './components/stats/stats.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
 export function tokenGetter() {
   return localStorage.getItem("jwt");
 }
@@ -52,6 +52,19 @@ export function tokenGetter() {
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    NgCircleProgressModule.forRoot({
+      "radius": 100,
+      "outerStrokeWidth": 16,
+      "innerStrokeWidth": 8,
+      "outerStrokeColor": "#78C000",
+      "innerStrokeColor": "#C7E596",
+      "animationDuration": 700,
+      "backgroundColor": "#ffffff",
+      "titleFontSize": "30",
+      "unitsFontSize": "15",
+      "subtitleFontSize": "20"
+    }),
+
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
