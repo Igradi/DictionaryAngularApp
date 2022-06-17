@@ -11,17 +11,24 @@ import decode from 'jwt-decode';
 })
 export class RoleGuardService {
 
-  constructor(public auth: AuthGuardService, public router: Router, private jwtHelper: JwtHelperService, private compa: HeaderComponent) { }
+  constructor(public auth: AuthGuardService, public router: Router, private jwtHelper: JwtHelperService) { }
 
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
     const token = localStorage.getItem('jwt') || "";
     const tokenPayload = decode(token);
-    if (this.compa.isUserAuthenticated() && (<any>tokenPayload).role == 'admin') {
+    if (this.isUserAuthenticated() && (<any>tokenPayload).role == 'admin') {
       return true;
     }
     this.router.navigate(["/alert"]);
     return false;
   }
-
+  isUserAuthenticated() {
+    const token = localStorage.getItem("jwt");
+    if (token && !this.jwtHelper.isTokenExpired(token)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
