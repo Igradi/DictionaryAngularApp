@@ -6,8 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { JwtModule } from '@auth0/angular-jwt';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -26,6 +24,10 @@ import { StatsComponent } from './components/stats/stats.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { AdminAlertComponent } from './components/admin-alert/admin-alert.component';
+import { MatProgressBar } from '@angular/material/progress-bar'
+
+
+
 export function tokenGetter() {
   return localStorage.getItem("jwt");
 }
