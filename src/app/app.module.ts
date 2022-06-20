@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,7 +24,9 @@ import { StatsComponent } from './components/stats/stats.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { AdminAlertComponent } from './components/admin-alert/admin-alert.component';
-import { MatProgressBar } from '@angular/material/progress-bar'
+import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { InterceptorService } from './shared/interceptor.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -55,6 +57,8 @@ export function tokenGetter() {
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
     ToastrModule.forRoot(),
     NgCircleProgressModule.forRoot({
       "radius": 100,
@@ -79,7 +83,7 @@ export function tokenGetter() {
 
 
   ],
-  providers: [RandomWordService, UserService, WordDefinitionService, AddWordToDbService],
+  providers: [RandomWordService, UserService, WordDefinitionService, AddWordToDbService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import { AuthGuardService } from 'src/app/guards/auth-guard.service';
 import { User } from 'src/app/shared/user.model';
 import { UserService } from 'src/app/shared/user.service';
 import decode from 'jwt-decode';
+import { LoaderService } from 'src/app/shared/loader.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ import decode from 'jwt-decode';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private jwtHelper: JwtHelperService, private service: AuthGuardService, private userService: UserService) { }
+  constructor(private jwtHelper: JwtHelperService, private service: AuthGuardService, private userService: UserService, public loaderService: LoaderService) { }
   public user = new User();
   isUserAuthenticated() {
     const token = localStorage.getItem("jwt");

@@ -3,7 +3,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
-
+<div *ngIf="loaderService.isLoading | async" class="loader-container">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
 <nav class="navbar sticky-top navbar-expand-xl">
     <div class="container">
         <a routerLink="/home"><img src="../../../assets/images/test.png" class="img-fluid" alt="Responsive image"></a>
