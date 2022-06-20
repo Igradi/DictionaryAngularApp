@@ -27,6 +27,7 @@
 
 p {
     font-size: 1.2rem;
+    font-weight: bold;
 }
 
 div i {
@@ -41,22 +42,21 @@ div i {
 }
 
 .cardGroup {
-    display: flex;
     flex-direction: row;
 }
 
 .cardWord {
     display: flex;
     flex-direction: row;
+    align-items: center;
     box-shadow: none;
-    background: #ffffff;
-
-
+    background: rgb(241, 241, 231);
+    margin-bottom: 15px;
 }
 
 .cardWord p {
     position: relative;
-    margin-top: 30px;
+    margin-bottom: 0px !important;
 }
 
 img {
@@ -65,15 +65,13 @@ img {
     margin-left: 10px;
 }
 
-@media screen and (max-width:500px) {
-    .btn-hover {
-        width: 160px;
+@media screen and (max-width:1000px) {
+    img {
+        width: 80px;
     }
-}
 
-@media screen and (max-width:380px) {
-    .btn-hover {
-        width: 140px;
+    p {
+        font-size: 16px;
     }
 }
 
@@ -82,7 +80,6 @@ img {
         text-align: center;
         min-width: 200px;
     }
-
 }
 
 @media screen and (max-width:550px) {
@@ -92,8 +89,27 @@ img {
     }
 }
 
+@media screen and (max-width:500px) {
+    .btn-hover {
+        width: 160px;
+    }
+}
+
 @media screen and (max-width:400px) {
     span {
         font-size: 14px;
+    }
+}
+
+@media screen and (max-width:380px) {
+    .btn-hover {
+        width: 140px;
+    }
+
+    .cardWord {
+        max-width: 170px !important;
+        padding: 0px;
+        margin: 0px !important;
+        margin-bottom: 10px !important;
     }
 }
