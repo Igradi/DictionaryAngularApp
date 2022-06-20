@@ -21,19 +21,21 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/search" routerLinkActive="active" href="#">Search words</a>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/stats" routerLinkActive="active" href="#">{{this.user.nickname}}'s
+                    <a *ngIf="isUserAuthenticated()==false" class="nav-link" routerLink="/stats"
+                        routerLinkActive="active" href="#">
                         Statistics</a>
+                    <a *ngIf="isUserAuthenticated()==true" class="nav-link" routerLink="/stats"
+                        routerLinkActive="active" href="#">
+                        {{this.user.nickname+"'s"}} Statistics</a>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/about" routerLinkActive="active" *ngIf="getUser()" href="#">
                         About {{this.user.nickname}}</a>
                     <a class="nav-link" routerLink="/about" routerLinkActive="active" *ngIf="!getUser()" href="#">
                         About </a>
-                <li class="nav-item">
-                    <a class="nav-link" *ngIf="isUserAuthenticated()==false" routerLink="/login"
-                        routerLinkActive="active" href="#">Login/register</a>
-                <li class="nav-item">
-                    <a class="nav-link" *ngIf="isUserAuthenticated() && isAdmin()" routerLink="/admin"
-                        routerLinkActive="active" href="#">Admin
+                <li class="nav-item" *ngIf="isUserAuthenticated()==false">
+                    <a class="nav-link" routerLink="/login" routerLinkActive="active" href="#">Login/register</a>
+                <li class="nav-item" *ngIf="isUserAuthenticated() && isAdmin()">
+                    <a class="nav-link" routerLink="/admin" routerLinkActive="active" href="#">Admin
                         options</a>
                 <li class="nav-item">
                     <a class="nav-link" *ngIf="isUserAuthenticated()==true" (click)="logOut()" routerLink="/login"

@@ -4,6 +4,7 @@
     font-family: "Titillium Web", sans-serif;
 }
 
+
 .navbar {
     background-color: rgb(160, 245, 188);
     border-radius: 40px;
@@ -21,6 +22,10 @@
 .navbar .nav-link {
     font-size: 20px;
     margin-left: 10px;
+}
+
+li {
+    text-align: center;
 }
 
 .fa-bars {
