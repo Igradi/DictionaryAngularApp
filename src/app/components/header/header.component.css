@@ -16,7 +16,7 @@
 .loader-container {
     width: 100%;
     z-index: 99;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .navbar .nav-item {
