@@ -25,6 +25,7 @@ import { AddWordToDbService } from './shared/add-word-to-db.service';
 import { StatsComponent } from './components/stats/stats.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { AdminAlertComponent } from './components/admin-alert/admin-alert.component';
 export function tokenGetter() {
   return localStorage.getItem("jwt");
 }
@@ -42,6 +43,7 @@ export function tokenGetter() {
     SearchComponent,
     StatsComponent,
     AdminPageComponent,
+    AdminAlertComponent,
 
   ],
   imports: [

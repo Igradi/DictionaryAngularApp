@@ -10,6 +10,7 @@ import { SearchComponent } from './components/search/search.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { RoleGuardService } from './guards/role-guard.service';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { AdminAlertComponent } from './components/admin-alert/admin-alert.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'alert', component: AlertComponent },
   { path: 'search', component: SearchComponent, canActivate: [AuthGuardService] },
   { path: 'stats', component: StatsComponent, canActivate: [AuthGuardService] },
-  { path: 'admin', component: AdminPageComponent, canActivate: [RoleGuardService] }
+  { path: 'admin', component: AdminPageComponent, canActivate: [RoleGuardService] },
+  { path: 'admin-alert', component: AdminAlertComponent }
 ];
 
 @NgModule({

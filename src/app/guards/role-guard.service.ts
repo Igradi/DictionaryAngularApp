@@ -20,7 +20,7 @@ export class RoleGuardService {
     if (this.isUserAuthenticated() && (<any>tokenPayload).role == 'admin') {
       return true;
     }
-    this.router.navigate(["/alert"]);
+    this.router.navigate(["/admin-alert"]);
     return false;
   }
   isUserAuthenticated() {
