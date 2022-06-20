@@ -4,12 +4,10 @@
     font-family: "Titillium Web", sans-serif;
 }
 
-
 .navbar {
     background-color: rgb(160, 245, 188);
     border-radius: 40px;
 }
-
 
 .navbar .navbar-brand {
     font-size: 30px;
@@ -44,7 +42,6 @@ li {
 }
 
 nav a.active {
-
     font-weight: bold;
 }
 
