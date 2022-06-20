@@ -1,22 +1,18 @@
 <div class="card card-4 w-50 text-center mx-auto my-3">
-    <span class="">
-        <h1 class="givenword card-title display-1 card_title">Your stats:</h1>
-    </span>
-    <p class="lead card-subtitle" id="wordType"></p>
-    <div class="text-start card-body">
-        <h5 class=" d-inline">Percentage of English learned: </h5>
-        <div class="mx-auto d-inline" style="margin-top:10%;">
-            <circle-progress [percent]="80">
-            </circle-progress>
-        </div>
 
+    <h1 class="givenword card-title display-1 card_title">Your stats:</h1>
 
-        <p class="inline d-inline"> </p>
-        <h5 class="mt-2">Synonyms:</h5>
-        <h5 class="d-inline">Example: </h5>
-        <p class="d-inline"></p>
-
+    <div class="text-align-center card-body">
+        <h5 class=" ">Percentage of English learned: </h5>
     </div>
+    <div class="circle mx-auto">
+        <circle-progress [percent]="80">
+        </circle-progress>
+    </div>
+
+    <h5 class="mt-2 ">Word Classes stats:</h5>
+
+
 
 
 </div>
