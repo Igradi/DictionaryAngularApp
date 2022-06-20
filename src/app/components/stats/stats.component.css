@@ -40,6 +40,31 @@ div i {
     transition: all 0, 2s;
 }
 
+.cardGroup {
+    display: flex;
+    flex-direction: row;
+}
+
+.cardWord {
+    display: flex;
+    flex-direction: row;
+    box-shadow: none;
+    background: #ffffff;
+
+
+}
+
+.cardWord p {
+    position: relative;
+    margin-top: 30px;
+}
+
+img {
+    height: 96px;
+    width: 96px;
+    margin-left: 10px;
+}
+
 @media screen and (max-width:500px) {
     .btn-hover {
         width: 160px;
