@@ -16,7 +16,7 @@ export class AddWordToDbService {
     let id = Number(IdString);
 
     let params = new HttpParams().append("id", id).append("wordName", word).append("wordType", wordType);
-    console.log(params);
+
     this.httpClient.get('https://localhost:7153/api/Words/' + id + ',' + word + ',' + wordType).subscribe(err => console.log(err));
 
   }

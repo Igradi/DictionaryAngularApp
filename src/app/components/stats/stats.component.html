@@ -6,7 +6,7 @@
         <h5 class=" ">Percentage of English learned: </h5>
     </div>
     <div class="circle mx-auto">
-        <circle-progress [percent]="80">
+        <circle-progress [percent]=this.percent>
         </circle-progress>
     </div>
 
@@ -15,21 +15,21 @@
         <div class="  row ">
             <div class="card cardWord  mx-2 col">
                 <img class="d-inline" src="../../../assets/images/icons8-noun-96.png" alt="">
-                <p class="d-inline mx-auto">100 nouns!</p>
+                <p class="d-inline mx-auto">{{this.numOfTypes.nouns}} nouns!</p>
             </div>
             <div class="card cardWord  mx-2 col">
                 <img class="d-inline" src="../../../assets/images/icons8-adjective-96.png" alt="">
-                <p class="d-inline mx-auto">325 adjectives!</p>
+                <p class="d-inline mx-auto">{{this.numOfTypes.adjectives}} adjectives!</p>
             </div>
         </div>
         <div class="  row ">
             <div class="card cardWord  mx-2 col">
                 <img class="d-inline" src="../../../assets/images/icons8-verb-96 (1).png" alt="">
-                <p class="d-inline mx-auto">100 verbs!</p>
+                <p class="d-inline mx-auto">{{this.numOfTypes.verb}} verbs!</p>
             </div>
             <div class="card cardWord  mx-2 col">
                 <img class="d-inline" src="../../../assets/images/icons8-adverb-96.png" alt="">
-                <p class="d-inline mx-auto">100 adverbs!</p>
+                <p class="d-inline mx-auto">{{this.numOfTypes.adverb}} adverbs!</p>
             </div>
         </div>
     </div>
