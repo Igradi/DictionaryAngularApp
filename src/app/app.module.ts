@@ -30,6 +30,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
+
 export function tokenGetter() {
   return localStorage.getItem("jwt");
 }
@@ -48,6 +49,7 @@ export function tokenGetter() {
     StatsComponent,
     AdminPageComponent,
     AdminAlertComponent,
+
 
   ],
   imports: [
