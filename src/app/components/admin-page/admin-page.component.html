@@ -1,35 +1,37 @@
 <div class="container">
     <div class="card">
-        <table class="table">
-            <thead>
-                <th scope="col">ID</th>
-                <th scope="col">First name</th>
-                <th scope="col">Last name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Bussiness mail</th>
-                <th scope="col">Nickname</th>
-                <th scope="col">Phone number</th>
-            </thead>
-            <tbody>
-                <tr *ngFor="let shortUser of this.user">
-                    <td>{{shortUser.id}}</td>
-                    <td>{{shortUser.name}}</td>
-                    <td>{{shortUser.lastName}}</td>
-                    <td>{{shortUser.email}}</td>
-                    <td *ngIf="shortUser.bussinessMail!==''">{{shortUser.bussinessMail}}</td>
-                    <td *ngIf="shortUser.bussinessMail===''"><i class="bi bi-question"></i></td>
-                    <td>{{shortUser.nickname}}</td>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <th scope="col">ID</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Bussiness mail</th>
+                    <th scope="col">Nickname</th>
+                    <th scope="col">Phone number</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let shortUser of this.user">
+                        <td>{{shortUser.id}}</td>
+                        <td>{{shortUser.name}}</td>
+                        <td>{{shortUser.lastName}}</td>
+                        <td>{{shortUser.email}}</td>
+                        <td *ngIf="shortUser.bussinessMail!==''">{{shortUser.bussinessMail}}</td>
+                        <td *ngIf="shortUser.bussinessMail===''"><i class="bi bi-question"></i></td>
+                        <td>{{shortUser.nickname}}</td>
 
-                    <td *ngIf="shortUser.phoneNumber!==''">{{shortUser.phoneNumber}}</td>
-                    <td *ngIf="shortUser.phoneNumber===''"><i class="bi bi-question"></i></td>
+                        <td *ngIf="shortUser.phoneNumber!==''">{{shortUser.phoneNumber}}</td>
+                        <td *ngIf="shortUser.phoneNumber===''"><i class="bi bi-question"></i></td>
 
-                    <button type="button" (click)="deleteUser(shortUser.id)" class="btn btn-danger "><i
-                            class="bi bi-x-circle-fill"></i>Delete</button>
-                </tr>
+                        <button type="button" (click)="deleteUser(shortUser.id)" class="btn btn-danger "><i
+                                class="bi bi-x-circle-fill"></i>Delete</button>
+                    </tr>
 
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 </div>
