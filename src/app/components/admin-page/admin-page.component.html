@@ -23,7 +23,8 @@
                     <td *ngIf="shortUser.phoneNumber!==''">{{shortUser.phoneNumber}}</td>
                     <td *ngIf="shortUser.phoneNumber===''"><i class="bi bi-question"></i></td>
 
-                    <button type="button" class="btn btn-danger "><i class="bi bi-x-circle-fill"></i>Delete</button>
+                    <button type="button" (click)="deleteUser(shortUser.id)" class="btn btn-danger "><i
+                            class="bi bi-x-circle-fill"></i>Delete</button>
                 </tr>
 
 
