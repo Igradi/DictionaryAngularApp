@@ -44,7 +44,7 @@ export class SearchComponent implements OnInit {
 
       },
       error => {
-        this.word.wordString = " This Word hasnt been found";
+        this.word.wordString = " This Word hasn\'t been found";
         this.wordFound = false
       },
 

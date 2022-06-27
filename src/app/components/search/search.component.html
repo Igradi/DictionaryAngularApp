@@ -33,9 +33,10 @@
     </div>
 
 </form>
-<div *ngIf="!this.wordFound && this.word.wordString==' This Word hasnt been found'"
+<div *ngIf="!this.wordFound && this.word.wordString==' This Word hasn\'t been found'"
     class="card card-4 w-50 text-center mx-auto my-3">
     <span class="">
-        <h1 class="givenword card-title display-1 card_title">{{this.word.wordString}}</h1>
+        <h1 id="notFound" class="givenword card-title display-3 card_title">{{this.word.wordString}} <img
+                src="../../../assets/images/not-found (1).png" alt="notfoundimg"> </h1>
     </span>
 </div>
