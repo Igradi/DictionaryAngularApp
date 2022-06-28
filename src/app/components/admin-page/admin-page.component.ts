@@ -10,27 +10,24 @@ import { User } from 'src/app/shared/user.model';
 export class AdminPageComponent implements OnInit {
 
   constructor(private httpClient: HttpClient) { }
-  public user: ShortUser[];
+  public users: ShortUser[];
   public index: number = 0;
   public idDeletingUser: number;
   ngOnInit(): void {
 
     this.httpClient.get("https://localhost:7153/api/User", { responseType: "json" }).subscribe(
       data => {
-        this.user = <ShortUser[]>data;
-        console.log(this.user);
-        this.index = this.user.length;
+        this.users = <ShortUser[]>data;
       }
 
     );
 
   }
   saveId(id: number) {
-    console.log("usa u saveiD");
     this.idDeletingUser = id;
   }
   deleteUser() {
-    console.log(this.idDeletingUser);
+
     let params = new HttpParams().set('id', this.idDeletingUser);
     this.httpClient.delete("https://localhost:7153/api/Has/id", { params: params }).subscribe(
       dta => {
