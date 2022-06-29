@@ -28,6 +28,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { InterceptorService } from './shared/interceptor.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ResetPasswordFormComponent } from './components/reset-password-form/reset-password-form.component';
 
 
 
@@ -51,6 +52,7 @@ export function tokenGetter() {
     AdminPageComponent,
     AdminAlertComponent,
     ResetPasswordComponent,
+    ResetPasswordFormComponent,
 
 
   ],
