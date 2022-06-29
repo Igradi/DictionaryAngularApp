@@ -11,6 +11,7 @@ import { StatsComponent } from './components/stats/stats.component';
 import { RoleGuardService } from './guards/role-guard.service';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { AdminAlertComponent } from './components/admin-alert/admin-alert.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent, canActivate: [AuthGuardService] },
   { path: 'stats', component: StatsComponent, canActivate: [AuthGuardService] },
   { path: 'admin', component: AdminPageComponent, canActivate: [RoleGuardService] },
-  { path: 'admin-alert', component: AdminAlertComponent }
+  { path: 'admin-alert', component: AdminAlertComponent },
+  { path: 'forgot-password', component: ResetPasswordComponent }
 ];
 
 @NgModule({
