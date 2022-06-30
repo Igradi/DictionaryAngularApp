@@ -29,7 +29,7 @@ import { InterceptorService } from './shared/interceptor.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ResetPasswordFormComponent } from './components/reset-password-form/reset-password-form.component';
-
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 
@@ -78,7 +78,7 @@ export function tokenGetter() {
       "unitsFontSize": "15",
       "subtitleFontSize": "20"
     }),
-
+    NgxChartsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
