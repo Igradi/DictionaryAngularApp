@@ -1,59 +1,64 @@
 <div class="container">
-    <div class="card">
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <th scope="col">ID</th>
-                    <th scope="col">First name</th>
-                    <th scope="col">Last name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Bussiness mail</th>
-                    <th scope="col">Nickname</th>
-                    <th scope="col">Phone number</th>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let shortUser of this.users">
-                        <td>{{shortUser.id}}</td>
-                        <td>{{shortUser.name}}</td>
-                        <td>{{shortUser.lastName}}</td>
-                        <td>{{shortUser.email}}</td>
-                        <td *ngIf="shortUser.bussinessMail!==''">{{shortUser.bussinessMail}}</td>
-                        <td *ngIf="shortUser.bussinessMail===''"><i class="bi bi-question"></i></td>
-                        <td>{{shortUser.nickname}}</td>
+    <div class="container">
+        <div class="card">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <th scope="col">ID</th>
+                        <th scope="col">First name</th>
+                        <th scope="col">Last name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Bussiness mail</th>
+                        <th scope="col">Nickname</th>
+                        <th scope="col">Phone number</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let shortUser of this.users">
+                            <td>{{shortUser.id}}</td>
+                            <td>{{shortUser.name}}</td>
+                            <td>{{shortUser.lastName}}</td>
+                            <td>{{shortUser.email}}</td>
+                            <td *ngIf="shortUser.bussinessMail!==''">{{shortUser.bussinessMail}}</td>
+                            <td *ngIf="shortUser.bussinessMail===''"><i class="bi bi-question"></i></td>
+                            <td>{{shortUser.nickname}}</td>
 
-                        <td *ngIf="shortUser.phoneNumber!==''">{{shortUser.phoneNumber}}</td>
-                        <td *ngIf="shortUser.phoneNumber===''"><i class="bi bi-question"></i></td>
+                            <td *ngIf="shortUser.phoneNumber!==''">{{shortUser.phoneNumber}}</td>
+                            <td *ngIf="shortUser.phoneNumber===''"><i class="bi bi-question"></i></td>
 
-                        <button id="row" type="button" data-toggle="modal" data-target="#exampleModal"
-                            (click)="saveId(shortUser.id)" class="btn btn-danger "><i
-                                class="bi bi-x-circle-fill"></i>Delete</button>
-                    </tr>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Deleting user</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    Are you sure?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary " data-dismiss="modal">No</button>
-                                    <button type="button" class="btn btn-primary" (click)="deleteUser()">Yes</button>
+                            <button id="row" type="button" data-toggle="modal" data-target="#exampleModal"
+                                (click)="saveId(shortUser.id)" class="btn btn-danger "><i
+                                    class="bi bi-x-circle-fill"></i>Delete</button>
+                        </tr>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Deleting user</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary "
+                                            data-dismiss="modal">No</button>
+                                        <button type="button" class="btn btn-primary"
+                                            (click)="deleteUser()">Yes</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-    <div>
-        <ngx-charts-advanced-pie-chart [results]="wordStats" [view]="[1000,500]"></ngx-charts-advanced-pie-chart>
+        <div class="space"></div>
+        <div class="pie-chart-parent">
+            <ngx-charts-advanced-pie-chart [results]="wordStats"></ngx-charts-advanced-pie-chart>
+        </div>
     </div>
 </div>

@@ -12,3 +12,11 @@
 tr:hover td {
     background: rgb(215, 215, 202);
 }
+
+.pie-chart-parent {
+    display: grid;
+}
+
+.space {
+    padding: 50px;
+}
