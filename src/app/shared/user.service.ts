@@ -16,6 +16,7 @@ export class UserService {
   editFormData: EditUser = new EditUser();
   readonly baseUrl = 'https://localhost:7153/api/User/POST'
   readonly editUrl = 'https://localhost:7153/api/User'
+  readonly forgotPassword = 'https://localhost:7153/api/User/forgot-password'
   postUser() {
     return this.http.post(this.baseUrl, this.formData);
   }
@@ -31,6 +32,10 @@ export class UserService {
 
     )
     return this.user.nickname;
+  }
+  forgotPass(mail: string) {
+    var params = new HttpParams().set("email", mail);
+    return this.http.post(this.forgotPassword, { params: params });
   }
 }
 
