@@ -30,6 +30,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ResetPasswordFormComponent } from './components/reset-password-form/reset-password-form.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { WordsRankedListComponent } from './components/words-ranked-list/words-ranked-list.component';
 
 
 
@@ -53,6 +54,7 @@ export function tokenGetter() {
     AdminAlertComponent,
     ResetPasswordComponent,
     ResetPasswordFormComponent,
+    WordsRankedListComponent,
 
 
   ],
