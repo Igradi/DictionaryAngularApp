@@ -56,9 +56,11 @@
                 </table>
             </div>
         </div>
-        <div class="space"></div>
-        <div class="pie-chart-parent">
-            <ngx-charts-advanced-pie-chart [results]="wordStats"></ngx-charts-advanced-pie-chart>
+
+        <div class="container pie-chart-parent" #ContainerRef>
+            <ngx-charts-advanced-pie-chart (window:resize)="onResize(ContainerRef.offsetWidth)" ng
+                [label]="'Total number of words'" [results]="wordStats" [view]="[this.view[0],this.view[1]]">
+            </ngx-charts-advanced-pie-chart>
         </div>
     </div>
 </div>

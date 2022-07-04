@@ -13,10 +13,12 @@ tr:hover td {
     background: rgb(215, 215, 202);
 }
 
-.pie-chart-parent {
-    display: grid;
+.pie-char-parent .arc {
+    min-width: 96px;
+    min-height: 96px;
 }
 
-.space {
-    padding: 50px;
+div.total-label {
+    white-space: nowrap;
+    overflow: auto;
 }

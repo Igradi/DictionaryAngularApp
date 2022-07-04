@@ -11,13 +11,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   styleUrls: ['./admin-page.component.css']
 })
 export class AdminPageComponent implements OnInit {
-
-  constructor(private httpClient: HttpClient) { }
+  public view: number[];
+  constructor(private httpClient: HttpClient) {
+    this.view = [innerWidth / 1.15, 300];
+  }
   public wordStats: AdminStats[];
   public users: ShortUser[];
   public index: number = 0;
   public idDeletingUser: number;
-  public view = "view"
+  onResize(width: any) {
+    this.view = [width / 1.15, 300];
+
+  }
 
   ngOnInit(): void {
 
