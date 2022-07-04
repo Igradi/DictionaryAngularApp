@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { User } from './user.model';
-import { HttpClient, HttpParams } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { EditUser } from './edit-user.model';
+import { Content } from '@angular/compiler/src/render3/r3_ast';
+
+
+
 
 
 @Injectable({
@@ -12,6 +16,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
   user = new User();
+
   formData: User = new User();
   editFormData: EditUser = new EditUser();
   readonly baseUrl = 'https://localhost:7153/api/User/POST'
@@ -33,9 +38,10 @@ export class UserService {
     )
     return this.user.nickname;
   }
-  forgotPass(mail: string) {
-    var params = new HttpParams().set("email", mail);
-    return this.http.post(this.forgotPassword, { params: params });
+  forgotPass(email: string) {
+
+
+    return this.http.post(this.forgotPassword, JSON.stringify(email), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) });
   }
 }
 

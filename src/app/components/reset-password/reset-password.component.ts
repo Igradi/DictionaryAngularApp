@@ -17,7 +17,7 @@ export class ResetPasswordComponent implements OnInit {
     this.service.forgotPass(email).subscribe(
       data => {
         console.log(data);
-      }
+      }, err => { console.log(err); }
     )
 
   }
