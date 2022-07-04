@@ -13,6 +13,7 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 import { AdminAlertComponent } from './components/admin-alert/admin-alert.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ResetPasswordFormComponent } from './components/reset-password-form/reset-password-form.component';
+import { WordsRankedListComponent } from './components/words-ranked-list/words-ranked-list.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'admin-alert', component: AdminAlertComponent },
   { path: 'forgot-password', component: ResetPasswordComponent },
   { path: 'forgot-password-form', component: ResetPasswordFormComponent },
+  { path: 'words-ranked-list', component: WordsRankedListComponent, canActivate: [RoleGuardService] }
 ];
 
 @NgModule({
