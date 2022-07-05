@@ -14,13 +14,7 @@ export class ResetPasswordComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  submitEmail(email: string) {
-    this.service.forgotPass(email).subscribe(
-      data => {
-        console.log(data);
-      }, err => { console.log(err); }
-    )
-  }
+
   onSubmit(email: string) {
     this.service.forgotPass(email).subscribe(
       data => {
