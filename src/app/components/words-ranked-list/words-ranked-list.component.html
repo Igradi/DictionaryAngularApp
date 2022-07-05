@@ -3,9 +3,12 @@
         <div class="table-responsive">
             <table class="table">
                 <thead>
-                    <th scope="col">Position</th>
-                    <th scope="col">Word</th>
-                    <th scope="col">Number of people:</th>
+                    <th colspan="3">Top Words</th>
+                    <tr>
+                        <th scope="col">Position</th>
+                        <th scope="col">Word</th>
+                        <th scope="col">Number of people:</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let word of this.words;index as i">
