@@ -39,3 +39,34 @@ td.second {
 td.first {
     background-color: #C9B037;
 }
+
+
+@media screen and (max-width: 780px) {
+
+    th {
+        max-width: 150px;
+    }
+
+    table {
+        min-width: 200px;
+    }
+
+    .card {
+        min-width: 300px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+
+    th {
+        max-width: 150px;
+    }
+
+    table {
+        min-width: 150px;
+    }
+
+    .card {
+        min-width: 250px;
+    }
+}
