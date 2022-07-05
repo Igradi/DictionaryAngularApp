@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResetPasswordFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
-
+  onSubmitResetPassword(userInput: { token: string, password: string, confirmPassword: string }) {
+    this.http.post('https://localhost:7153/api/User/reset-password', userInput)
+      .subscribe((res) => {
+        console.log(res);
+      });
+  }
 }
