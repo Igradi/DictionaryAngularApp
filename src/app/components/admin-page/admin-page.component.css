@@ -24,6 +24,7 @@ div.total-label {
 }
 
 p {
+    text-align: center;
     margin: auto;
     font-size: 26px;
     text-shadow:
