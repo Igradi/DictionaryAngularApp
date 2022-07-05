@@ -1,6 +1,8 @@
 .card {
     border-radius: 10px;
     background: rgb(241, 241, 231);
+    width: 40%;
+
 }
 
 #row {
@@ -9,6 +11,31 @@
     margin-left: 20px;
 }
 
-tr:hover td {
+th {
+    text-align: center;
+}
+
+td.info {
+    text-align: center;
+}
+
+tr:hover td.info {
     background: rgb(215, 215, 202);
+}
+
+td.position {
+    width: 0.5em;
+    text-align: center;
+}
+
+td.third {
+    background-color: #AD8A56;
+}
+
+td.second {
+    background-color: #B4B4B4;
+}
+
+td.first {
+    background-color: #C9B037;
 }

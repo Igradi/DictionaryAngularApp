@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="card">
+    <div class="card mx-auto">
         <div class="table-responsive">
             <table class="table">
                 <thead>
@@ -8,34 +8,14 @@
                     <th scope="col">Repetitions</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <!-- <td>{{shortUser.id}}</td>
-                        <td>{{shortUser.name}}</td>
-                        <td>{{shortUser.lastName}}</td>
-                        <td>{{shortUser.email}}</td>
-                        <td *ngIf="shortUser.bussinessMail!==''">{{shortUser.bussinessMail}}</td>
-                        <td *ngIf="shortUser.bussinessMail===''"><i class="bi bi-question"></i></td>
-                        <td>{{shortUser.nickname}}</td>
-
-                        <td *ngIf="shortUser.phoneNumber!==''">{{shortUser.phoneNumber}}</td>
-                        <td *ngIf="shortUser.phoneNumber===''"><i class="bi bi-question"></i></td>
-
-                        <button id="row" type="button" data-toggle="modal" data-target="#exampleModal"
-                            (click)="saveId(shortUser.id)" class="btn btn-danger "><i
-                                class="bi bi-x-circle-fill"></i>Delete</button> -->
+                    <tr *ngFor="let word of this.words;index as i">
+                        <td *ngIf="i==0" class="position first">{{i+1}} </td>
+                        <td *ngIf="i==1" class="position second">{{i+1}} </td>
+                        <td *ngIf="i==2" class="position third">{{i+1}} </td>
+                        <td *ngIf="i>2" class="position else">{{i+1}} </td>
+                        <td class="info">{{word.wordName}}</td>
+                        <td class="info">{{word.repetitions}}</td>
                     </tr>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
                 </tbody>
             </table>
         </div>
