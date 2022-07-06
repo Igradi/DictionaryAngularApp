@@ -29,7 +29,10 @@ const routes: Routes = [
   { path: 'admin-alert', component: AdminAlertComponent },
   { path: 'forgot-password', component: ResetPasswordComponent },
   { path: 'forgot-password-form', component: ResetPasswordFormComponent },
-  { path: 'words-ranked-list', component: WordsRankedListComponent, canActivate: [RoleGuardService] }
+  { path: 'words-ranked-list', component: WordsRankedListComponent, canActivate: [RoleGuardService] },
+  { path: '', component: LoginComponent },
+  { path: '**', component: MainComponent, canActivate: [AuthGuardService] },
+
 ];
 
 @NgModule({
