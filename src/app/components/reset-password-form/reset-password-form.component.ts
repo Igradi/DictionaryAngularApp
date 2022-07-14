@@ -18,7 +18,7 @@ export class ResetPasswordFormComponent implements OnInit {
       .subscribe(res => {
         this.toastr.success('Congratulations, you have reset your password!', 'Updating password');
         this.router.navigate(['/login']);
-      }, err => { this.toastr.warning('Something went wrong', 'ERROR'); });
+      }, err => { this.toastr.warning('Wrong verification code or passwords do not match', 'ERROR'); });
 
   }
 }
