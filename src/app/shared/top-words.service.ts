@@ -8,7 +8,7 @@ export class TopWordsService {
   constructor(private httpClient: HttpClient) { }
 
   getTopWords() {
-    return this.httpClient.get("https://localhost:7153/api/Has/topWords", { responseType: "json" });
+    return this.httpClient.get("https://localhost:7153/api/UserWords/topWords", { responseType: "json" });
   }
 
 }

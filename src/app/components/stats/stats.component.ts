@@ -2,13 +2,11 @@ import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { StatsService } from 'src/app/shared/stats.service';
 
-class Types {
-  public nouns: number = 0;
-  public adjectives: number = 0;
-  public verb: number = 0;
-  public adverb: number = 0;
-}
 
+class ReceivedTypes {
+  public name: string = "";
+  public value: number = 0;
+}
 
 @Component({
   selector: 'app-stats',
@@ -19,12 +17,16 @@ class Types {
 export class StatsComponent implements OnInit {
 
   constructor(private httpClient: HttpClient, private stats: StatsService) { }
-  public numOfTypes: Types = new Types();
+
   public percent: number = 0;
+  public received: ReceivedTypes[] = [];
   ngOnInit(): void {
     this.stats.getStats().subscribe(
       data => {
-        this.numOfTypes = <any>data;
+        this.received = <any>data;
+        console.log(this.received);
+
+
       }, err => { console.log(err); }
 
     )
