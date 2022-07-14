@@ -4,8 +4,10 @@ import { StatsService } from 'src/app/shared/stats.service';
 
 
 class ReceivedTypes {
-  public name: string = "";
-  public value: number = 0;
+  public nouns: number = 0;
+  public adjectives: number = 0;
+  public verb: number = 0;
+  public adverb: number = 0;
 }
 
 @Component({
@@ -19,7 +21,7 @@ export class StatsComponent implements OnInit {
   constructor(private httpClient: HttpClient, private stats: StatsService) { }
 
   public percent: number = 0;
-  public received: ReceivedTypes[] = [];
+  public received: ReceivedTypes;
   ngOnInit(): void {
     this.stats.getStats().subscribe(
       data => {
