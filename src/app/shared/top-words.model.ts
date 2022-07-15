@@ -1,4 +1,4 @@
 export class TopWords {
-    wordName: string = "";
-    repetitions: number = 0;
+    WordName: string = "";
+    Repetitions: number = 0;
 }

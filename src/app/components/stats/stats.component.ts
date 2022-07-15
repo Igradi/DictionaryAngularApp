@@ -4,10 +4,10 @@ import { StatsService } from 'src/app/shared/stats.service';
 
 
 class ReceivedTypes {
-  public nouns: number = 0;
-  public adjectives: number = 0;
-  public verb: number = 0;
-  public adverb: number = 0;
+  public Nouns: number = 0;
+  public Adjectives: number = 0;
+  public Verb: number = 0;
+  public Adverb: number = 0;
 }
 
 @Component({
